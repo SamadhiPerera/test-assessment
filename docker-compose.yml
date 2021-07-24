@@ -1,0 +1,11 @@
+version: '2'
+services:
+  app:
+    image: devteds/rails-api-example
+    ports:
+      - "80:3000"
+    environment:
+      DB_USER: rootuser
+      DB_NAME: testassesment
+      DB_PASSWORD: rootuser123
+      DB_HOST: td1u8qa0fi8wyv4.c3yxxftkcfof.ap-south-1.rds.amazonaws.com
