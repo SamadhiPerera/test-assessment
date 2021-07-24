@@ -1,21 +1,26 @@
 version: '2'
 services:
   app:
-    image: node:12-alpine
-    command: sh -c "yarn install && yarn run dev"
     ports:
       - "3000:3000"
-    working_dir: /online examination/app
+      restart: always
     environment:
       DB_USER: rootuser
       DB_NAME: testassesment
-      DB_PASSWORD: rootuser123
-      DB_HOST: td1u8qa0fi8wyv4.c3yxxftkcfof.ap-south-1.rds.amazonaws.com
+      DB_PASSWORD: root
+      DB_HOST: 127.0.0.1 
 
   mysql:
     image: mysql:5.7
     volumes:
-      - todo-mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: onlineexaminationdb
+      MYSQL_DATABASE: testassesment
+      MYSQL_USER: rootuser
+      MYSQL_PASSWORD: root
+
+volumes:
+  mysql-data:
+
