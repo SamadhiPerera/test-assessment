@@ -10,8 +10,8 @@ npm install nodemon
 After creating the folders with files accordingly, use the following command
 npm run dev
 
-Cloud formation stack for create ec2 instance
+Cloud formation stack for create ec2 instance - This cloudformation template is based on the AMI ( Ubuntu server ) which is taken from ap-south-1 region. 
+OS - Ubuntu Server 20.04
 
-OS - Ubuntu Server 20.04 
 
 The provided cloud formation stack is scripted for create VPC, public and private subnets and ec2 instance with t2.micro instance type. Inside the web server, Docker is installed and start when creating the instance. 
